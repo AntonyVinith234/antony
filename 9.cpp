@@ -1,4 +1,3 @@
-//Develop a menu driven program to fill the polygon using scan line algorithm
 #include<windows.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -12,7 +11,7 @@ void edgedetect(float x1,float y1,float x2,float y2,int *le,int *re)
 {
 	float mx,x,temp;
 	int i;
-	if((y2-y1)<0) // we swape so we don't get a negative slope
+	if((y2-y1)<0) 
 	{
 
 		temp=y1;
@@ -23,7 +22,7 @@ void edgedetect(float x1,float y1,float x2,float y2,int *le,int *re)
 		x2=temp;
 	}
 
-	if((y2-y1)!=0)  // to find the slope if not zero i'e not only a horizontal line
+	if((y2-y1)!=0)  
 		mx=(x2-x1)/(y2-y1);
 
 	else
@@ -32,7 +31,7 @@ void edgedetect(float x1,float y1,float x2,float y2,int *le,int *re)
 // slope is mx
 
 	x=x1;
-	for(i=y1;i<=y2;i++)  // follow along the edge of the polygon
+	for(i=y1;i<=y2;i++)  
 	{
 
 		if(x < le[i] )
@@ -59,7 +58,7 @@ void draw_pixel(int x,int y)
 void scanfill(float x1,float y1,float x2,float y2,float x3,float y3,float x4,float y4)
 
 {
-	int le[500],re[500]; // left edge and right edge
+	int le[500],re[500]; 
 	int i,y;
 
 	for(i=0;i<500;i++)
